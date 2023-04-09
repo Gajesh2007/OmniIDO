@@ -244,3 +244,56 @@ Usually meant for the user to remotely claim his assets
     ) external
 
 Usually meant for the user to invest remotely
+
+## Source Functions
+
+
+### deposit
+
+    function deposit(uint256 _amount) public
+
+Transfers user's `token` to the contract and bridge user's investment to `destination`. The function will fail in case user:
+
+- IDO hasn't started
+- IDO is already over
+- `_amount` is 0
+- `_amount` is less than `minAmount`
+
+#### Parameters
+
+| Name | Type | Description
+| ------ | ----------- | ------------ |
+| `_amount` | uint256 | The amount of `token`s user is investing |
+
+### claim
+
+    function claim(
+        _user
+     ) public
+
+This functions allows users to remotely claim their `offeringToken`s. The function will fail in case user:
+
+- IDO hasn't ended
+- `_user` hasn't participated
+- `_user` doesn't have anything to claim
+- `msg.value` aka LZ fees aren't provided
+
+#### Parameters
+
+| Name | Type | Description
+| ------ | ----------- | ------------ |
+| `_user` | address | The user who's `offeringToken`s are being claimed |
+
+### setMinAmount
+
+    function setMinAmount(
+        uint256 _minAmount
+     ) public onlyOwner
+
+Sets minimum amount of `_token` one user can invest
+
+#### Parameters
+
+| Name | Type | Description
+| ------ | ----------- | ------------ |
+| `_minAmount` | uint256 | Minimum amount of `token` one user can invest |
