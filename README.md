@@ -7,6 +7,26 @@ Raise Capital From Any Chain, Powered by LayerZero
 
 ## Docs
 
-### Source
+## Destination Functions
 
-##
+### Initialize
+
+    function initialize(
+        IERC20 _token,
+        IERC20 _offeringToken,
+        uint256 _startTime,
+        uint256 _endTime,
+        uint256 _offeringAmount,
+        uint256 _raisingAmount,
+        uint256 _minAmount
+    ) public onlyOwner
+
+Initializes The IDO
+
+#### Parameters
+
+| Name | Type | Description
+| ------ | ----------- | ------------ |
+| _token |  |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
