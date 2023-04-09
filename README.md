@@ -5,6 +5,15 @@ Raise Capital From Any Chain, Powered by LayerZero
 
 ![image](https://user-images.githubusercontent.com/26431906/230772158-30acafd6-cec4-4bd4-a930-ae1de2d742f4.png)
 
+## How To Deploy
+
+- Add Your Private Keys to `hardhat.config.js` OR add it your .env file & import it to `hardhat.config.js`
+- Add RPC Endpoints for both the chains
+- Add All The IDO, LZ & Stargate Details in `scripts/sourceDeploy.js` & `scripts/destinationDeploy.js` 
+- Deploy Destination Contract: `npx hardhat run --network localhost scripts/destinationDeploy.js` 
+- Run The `Initialize` Function on Destination contract
+- Deploy Source Contract: `npx hardhat run --network localhost scripts/sourceDeploy.js` 
+
 ## Docs
 
 ## Destination Functions
