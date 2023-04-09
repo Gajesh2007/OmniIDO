@@ -7,7 +7,34 @@
 const hre = require("hardhat");
 
 async function main() {
-  
+  let lzEndpoint = "";
+  let stargateRouter = "";
+  let dstChainId = "";
+  let srcPoolId = "";
+  let dstPoolId = "";
+  let usdc = "";
+  let startTime = "";
+  let endTime = "";
+  let minAmount = "";
+
+  const Source = await hre.ethers.getContractFactory("Source");
+  const source = await Source.deploy(
+    lzEndpoint,
+    stargateRouter,
+    dstChainId,
+    srcPoolId,
+    dstPoolId,
+    usdc,
+    startTime,
+    endTime,
+    minAmount
+  );
+
+  await source.deployed();
+
+  console.log(
+    `Deployed The Contract on Source Chain: ${source.address}`
+  );
 }
 
 // We recommend this pattern to be able to use async/await everywhere
